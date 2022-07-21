@@ -1,5 +1,5 @@
 # PigGame
 
-<h1>The Flow</h1>
+<h3>The Flow</h3>
 </br>
-<img src="/pig-game-flowchart.png" width="400px"></img>
+<img src="/pig-game-flowchart.png" width="70%"></img>

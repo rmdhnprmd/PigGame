@@ -171,20 +171,15 @@ main {
 }
 
 .my-git {
-  font-size: medium;
-  position: absolute;
-  top: 53rem;
-  left: 50rem;
-  transform: translate(-50%, 50%);
-  transition: all 0.2s;
+  top: 55rem;
+  font-size: 1rem;
+  text-transform: none;
+}
 
-  background-color: white;
-  background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
-
-  padding: 0.7rem 2.5rem;
-  border-radius: 50rem;
-  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+.my-git::first-letter {
+  font-size: 1rem;
+  display: inline-block;
+  margin-right: 0rem;
 }
 
 .my-link {

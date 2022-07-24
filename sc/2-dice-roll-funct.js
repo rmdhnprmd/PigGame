@@ -83,7 +83,7 @@ export const holdButton = (btnHold.onclick = () => {
       scores[activePlayer];
 
     // 2. Cek jika score player >= 100
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 100) {
       // Game kelar
       playing = false;
       diceEl.classList.add('hidden');

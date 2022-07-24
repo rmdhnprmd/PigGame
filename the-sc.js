@@ -17,7 +17,3 @@ export {
   switchPlayer,
   buttonNew,
 } from './sc/2-dice-roll-funct.js';
-// currentScore,
-// activePlayer,
-// playing,
-// scores,

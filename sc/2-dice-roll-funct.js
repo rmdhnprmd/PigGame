@@ -1,22 +1,27 @@
-'use strict';
+import {
+  diceEl,
+  btnRoll,
+  btnHold,
+  btnNew,
+  player0El,
+  player1El,
+  score0El,
+  score1El,
+  current0El,
+  current1El,
+} from './1-var-el-input.js';
+import {
+  removeWinnerClass,
+  addActiveClass,
+  removeActiveClass,
+  resetTextContent,
+} from './3-init-funct.js';
 
-// Input untuk variabel tiap element
-const player0El = document.querySelector('.player--0');
-const player1El = document.querySelector('.player--1');
+// Kondisi yg harus di reset
+export let scores, currentScore, activePlayer, playing;
 
-const score0El = document.querySelector('#score--0');
-const score1El = document.getElementById('score--1');
-const current0El = document.getElementById('current--0');
-const current1El = document.getElementById('current--1');
-
-const diceEl = document.querySelector('.dice');
-const btnNew = document.querySelector('.btn--new');
-const btnRoll = document.querySelector('.btn--roll');
-const btnHold = document.querySelector('.btn--hold');
-
-let scores, currentScore, activePlayer, playing;
-
-const init = function () {
+//Fungsi init untuk new button
+export const init = function () {
   // Kondisi yg akan terus dipakai
   scores = [0, 0];
   currentScore = 0;
@@ -24,21 +29,21 @@ const init = function () {
   playing = true;
 
   // Kondisi yg harus di reset
-  score0El.textContent = 0;
-  score1El.textContent = 0;
-  current0El.textContent = 0;
-  current1El.textContent = 0;
+  resetTextContent(score0El);
+  resetTextContent(score1El);
+  resetTextContent(current0El);
+  resetTextContent(current1El);
 
   diceEl.classList.add('hidden');
-  player0El.classList.remove('player--winner');
-  player1El.classList.remove('player--winner');
-  player0El.classList.add('player--active');
-  player1El.classList.remove('player--active');
+  removeWinnerClass(player0El);
+  removeWinnerClass(player1El);
+  addActiveClass(player0El);
+  removeActiveClass(player1El);
 };
 init();
 
 // Fungsi switch player
-const switchPlayer = () => {
+export const switchPlayer = () => {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
   currentScore = 0;
   activePlayer = activePlayer === 0 ? 1 : 0;
@@ -47,20 +52,19 @@ const switchPlayer = () => {
 };
 
 // Fungsi kocokan dadu
-btnRoll.onclick = () => {
+export const rollButton = (btnRoll.onclick = () => {
   if (playing) {
-    // 1. Generating random number
+    // 1. Generating angka random
     const dice = Math.trunc(Math.random() * 6) + 1;
-    // console.log(dice);
 
     // 2. Display dadu
     diceEl.classList.remove('hidden');
-    diceEl.src = `dice-${dice}.png`;
+    diceEl.src = `../dice-${dice}.png`;
 
     // 3. Cek kocokan dadu, jika keluar angka 1, switch playernya
     if (dice !== 1) {
       // jumlahin tiap angka dadu ke currentScore
-      currentScore += dice;
+      currentScore = currentScore + dice;
       document.getElementById(`current--${activePlayer}`).textContent =
         currentScore;
     } else {
@@ -68,10 +72,10 @@ btnRoll.onclick = () => {
       switchPlayer();
     }
   }
-};
+});
 
 // Fungsi hold button
-btnHold.onclick = () => {
+export const holdButton = (btnHold.onclick = () => {
   if (playing) {
     // 1. Jumlahin currentScore ke score pemain yg aktif
     scores[activePlayer] += currentScore;
@@ -79,7 +83,7 @@ btnHold.onclick = () => {
       scores[activePlayer];
 
     // 2. Cek jika score player >= 100
-    if (scores[activePlayer] >= 100) {
+    if (scores[activePlayer] >= 20) {
       // Game kelar
       playing = false;
       diceEl.classList.add('hidden');
@@ -94,9 +98,9 @@ btnHold.onclick = () => {
       switchPlayer();
     }
   }
-};
+});
 
 // Fungsi reset
-btnNew.onclick = () => {
+export const buttonNew = (btnNew.onclick = () => {
   init();
-};
+});

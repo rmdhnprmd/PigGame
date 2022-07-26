@@ -6,6 +6,7 @@
   <li>Click <strong>Role Dice</strong> button to generate random dice number, and it will add to your current score.</li>
   <li>After you get the current score, you can click <strong>Hold Button</strong> to add the current score to your main score.</li>
   <li>Carefully, if you get number 1 dice, your current score will be reset and the player will be switched to another player.</li>
+  <li>Who gets a score of 100, that's the winner</li>
   <li>So i hope you enjoy.. 🔥🔥</li>
 </ol>
 <h1 align="center">Game Flow</h1>

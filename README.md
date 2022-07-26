@@ -1,6 +1,6 @@
 <h1 align ="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Exciting_-_Idil_Keysan_-_Wikimedia_Giphy_stickers_2019.gif/600px-Exciting_-_Idil_Keysan_-_Wikimedia_Giphy_stickers_2019.gif?20190827151405" width="50px"></img> Pig Game <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Exciting_-_Idil_Keysan_-_Wikimedia_Giphy_stickers_2019.gif/600px-Exciting_-_Idil_Keysan_-_Wikimedia_Giphy_stickers_2019.gif?20190827151405" width="50px"></h1>
 </br>
-<p align="center"><a href="https://pig-pig-game.netlify.app/" target="_blank">💩</a></p>
+<p align="center"><a href="https://pig-pig-game.netlify.app/" target="_blank"> Play 💩</a></p>
 <h2> How to play?</h2>
 <ol>
   <li>Click <strong>Role Dice</strong> button to generate random dice number, and it will add to your current score.</li>
